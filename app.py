@@ -79,6 +79,20 @@ def delete(id):
     return redirect('/post')
 
 
+# create de new_post 
+@app.route('/post/new', methods=['GET','POST'])
+def new_post():
+    if(request.method == 'POST'):
+        post_title = request.form['title']
+        post_content = request.form['content']
+        post_author = request.form['author']
+        db.session.add(BlogPost(title=post_title,content=post_content,author=post_author))
+        db.session.commit()
+        return redirect('/post')
+    else:
+        return render_template('new_post.html')
+
+
 
 
 if __name__ == '__main__':
