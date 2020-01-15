@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block head %}
+<title>Post</title>
+{% endblock %} {% block body %}
+
+<div class="container">
+    <h2> Our Posts </h2>
+    <hr>
+    <form action="/post" method="POST" class="form" class="container">
+        <div class="form-group">
+            Title: <input type="text" id="title" , name="title" class="form-control" style="width: 400px;">
+        </div>
+
+        <div class="form-group">
+            Author:
+            <input type="text" id="author" , name="author" class="form-control" style="width: 400px;">
+        </div>
+        <div class="form-group">
+            Content:
+            <textarea id="content" , name="content" cols="3" rows="3" class="form-control" style="width: 400px;"></textarea>
+        </div>
+        <div>
+            <input type="submit" id="" name="" value="Post" class="btn btn-success">
+        </div>
+    </form>
+
+    <hr> {% for post in posts %}
+    <h3> Title: {{ post.title }}</h3>
+    <p>Content: {{ post.content }}</p>
+    {% if post.author %}
+    <p> Posted by: {{ post.author }}</p>
+    {% else %}
+    <p> Posted by: Author Unknown </p>
+    {% endif %}
+    <a href="/post/edit/{{ post.id }}" class="btn btn-primary">Edit</a>
+    <a href="/post/delete/{{post.id }}" class="btn btn-danger">Delete </a> {% endfor %}
+</div>
+
+{% endblock %}
