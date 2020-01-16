@@ -1,5 +1,17 @@
 {% extends 'base.html' %} {% block head %}
 <title>Home</title>
 {% endblock %} {% block body %}
-<h1> Welcome to home Page</h1>
+
+<div class="container">
+    <h1> Home Page</h1>
+    <main role="main" class="container">
+        <div class="jumbotron">
+            <h1>Blog App</h1>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat iure dicta ducimus, nesciunt velit odit recusandae rerum aperiam autem reiciendis similique voluptatibus dolore tempore assumenda consequuntur porro deleniti, inventore quaerat..
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta, asperiores possimus. Rem porro facilis at. Possimus perferendis tempora numquam quos fuga obcaecati, iusto voluptate eveniet adipisci, ipsum ea illo! Sint.</p>
+            <a class="btn btn-lg btn-primary" href="/post" role="button">View our posts &raquo;</a>
+        </div>
+    </main>
+</div>
+
 {% endblock %}
